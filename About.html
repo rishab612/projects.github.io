@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onload="myFunction()">
+    <div id="loading"></div>
+   <header>
+    <div class="navbar">
+        <div class="logo"><a href="Home.html">Web Dev </a><span style="color: #ffffff;">About Us</span></div>
+        <ul class="links">
+            <li><i class="fa-solid fa-house" style="color: #ffffff;  margin-right: 5px; margin-bottom: 3px;"></i><a href="Home.html" id="home-link">Home</a></li>
+            <li><i class="fa-solid fa-circle-info" style="color: #ffffff; margin-right: 5px; margin-bottom: 3px;"></i><a href="About.html" id="about-link">About Us</a></li>
+            <li><i class="fa-solid fa-scroll" style="color: #ffffff;  margin-right: 5px; margin-bottom: 3px;"></i><a href="Project.html" id="project-link">Projects</a></li>
+            <li><i class="fa-solid fa-envelope" style="color: #ffffff;  margin-right: 5px; margin-bottom: 3px;"></i><a href="Contact.html" id="contact-link">Contact Us</a></li>            
+        </ul>
+        <div>
+        <a href="Login.html" class="action_btn_login"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> Login</a>
+        <a href="Signup.html" class="action_btn_signup"><i class="fa-solid fa-user-plus" style="color: #ffffff;"></i> Signup</a>
+    </div>
+        <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    </div>
+
+    <div class="dropdown_menu">
+        <li><i class="fa-solid fa-house" style="color: #ffffff; margin-right: 5px; margin-bottom: 5px;"></i><a href="Home.html">Home</a></li>
+        <li><i class="fa-solid fa-circle-info" style="color: #ffffff; margin-right: 5px; margin-bottom: 5px;"></i><a href="About.html">About Us</a></li>
+        <li><i class="fa-solid fa-scroll" style="color: #ffffff; margin-right: 5px; margin-bottom: 5px;"></i><a href="Project.html">Projects</a></li>
+        <li><i class="fa-solid fa-envelope" style="color: #ffffff; margin-right: 5px; margin-bottom: 5px;"></i><a href="Contact.html">Contact Us</a></li>
+        <li><a href="Login.html" class="action_btn_login"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff; margin-right: 5px; margin-top: 1px;"></i>Login</a></li>
+        <li><a href="Signup.html" class="action_btn_signup"><i class="fa-solid fa-user-plus" style="color: #ffffff; margin-right: 5px; margin-top: 1px;"></i>Signup</a></li>
+    </div>
+   </header>
+   <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+const toggleBtnIcon = document.querySelector('.toggle_btn i')
+const dropDownMenu = document.querySelector('.dropdown_menu')
+
+toggleBtn.onclick = function () {
+  dropDownMenu.classList.toggle('open')
+  const isOpen = dropDownMenu.classList.contains('open')
+
+  toggleBtnIcon.classList = isOpen
+  ? 'fa-solid fa-xmark'
+  :  'fa-solid fa-bars'
+}
+   </script>
+   <script>
+    // Get the current page URL
+const currentPageURL = window.location.href;
+
+// Get all the navigation links
+const links = document.querySelectorAll('.navbar a');
+
+// Loop through the links and add the "active" class to the one that matches the current URL
+for (const link of links) {
+  if (currentPageURL.includes(link.getAttribute('href'))) {
+    link.classList.add('active');
+  }
+}
+
+   </script>
+   <script src="script.js"></script>
+</body>
+</html>
